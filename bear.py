@@ -8,8 +8,8 @@ class Bear(Animal):
     # Create the Bear sound
     bear_sound = " growl...growl "
 
-    # Create a list of hyena names.
-    list_of_hyena_names = []
+    # Create a list of bear names.
+    list_of_bear_names = []
 
     file_path = r'animalNames.txt'
     with open(file_path, 'r') as file:
@@ -18,8 +18,8 @@ class Bear(Animal):
         # Iterate through the lines in the file
         line_num = 1
         for line in lines:
-            if line_num == 3: # Hyenas names are on the 7th line
-                list_of_lion_names.extend(line.strip().split(', '))
+            if line_num == 11: # Bears names are on the 11th line
+                list_of_bear_names.extend(line.strip().split(', '))
                 break
             else:
                 line_num += 1
