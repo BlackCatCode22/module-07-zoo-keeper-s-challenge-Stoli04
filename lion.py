@@ -3,10 +3,10 @@ from Animal import Animal
 
 class Lion(Animal):
     # create a static class variable to keep track of the number of lions created
-    numOfHyenas = 0
+    numOfTigers = 0
 
     # Create the lion sound
-    hyena_sound = " rawr...rawr "
+    tiger_sound = " roar...roar "
 
     # Create a list of lion names.
     list_of_lion_names = []
@@ -18,24 +18,30 @@ class Lion(Animal):
         # Iterate through the lines in the file
         line_num = 1
         for line in lines:
-            if line_num == 7:
-                list_of_hyena_names.extend(line.strip().split(', '))
+            if line_num == 7: # Lion names are on the 7th line
+                list_of_lion_names.extend(line.strip().split(', '))
                 break
             else:
                 line_num += 1
 
-    def __init__(self, name="a_name", animal_id="an_id", birth_date="2099-01-01", color="a_color", gender="a_gender",
-                 weight="a_weight", originating_zoo="a_zoo", date_arrival="2099-01-01"):
-        # Increment the static variable numOfHyenas when a new Hyena object is created
-        Hyena.numOfLions += 1
+    def __init__(self, name="a_name", animal_id="an_id", birth_date="2099-01-01", color="a_color", sex="a_sex", weight="a_weight", originating_zoo="a_zoo", date_arrival="2099-01-01"):
+        # Increment the static variable numOfTigers when a new Lion object is created
+        Lion.numOfLions += 1
+
+        # Generate the unique ID
+        self.gen_unique_id()
 
         # Call the constructor of the parent class (Animal) with 'Lion' as the species
-        super().__init__("lion", name, animal_id, birth_date, color, gender, weight, originating_zoo, date_arrival)
-
+        super().__init__("lion", name, animal_id, birth_date, color, sex, weight, originating_zoo, date_arrival)
+    
     def make_sound(self):
         return self.lion_sound
 
-    # the lion object will call this method to get an unused hyena name. pop() will remove the first element from
+    # the lion object will call this method to get an unused lion name. pop() will remove the first element from
     #   the list_of_lion_names[]
     def get_lion_name(self):
         return self.list_of_lion_names.pop(0)
+
+    def gen_unique_id(self):
+        # Assuming the unique ID is composed of the species abbrevation and the number of lions
+        self.animal_id = "Li" + str(Lion.numOfLions).zfill(2)
