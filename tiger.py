@@ -6,7 +6,7 @@ class Tiger(Animal):
     numOfTigers = 0
 
     # Create the tiger sound
-    tiger_sound = " roar...roar "
+    tiger_sound = " rawr...rawr "
 
     # Create a list of tiger names.
     list_of_tiger_names = []
