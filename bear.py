@@ -25,23 +25,23 @@ class Bear(Animal):
                 line_num += 1
 
     def __init__(self, name="a_name", animal_id="an_id", birth_date="2099-01-01", color="a_color", sex="a_sex", weight="a_weight", originating_zoo="a_zoo", date_arrival="2099-01-01"):
-        # Increment the static variable numOfHyenas when a new Hyena object is created
-        Hyena.numOfHyenas += 1
+        # Increment the static variable numOfBears when a new Bear object is created
+        Hyena.numOfBears += 1
 
         # Generate the unique ID
         self.gen_unique_id()
 
         # Call the constructor of the parent class (Animal) with 'Lion' as the species
-        super().__init__("hyena", name, animal_id, birth_date, color, sex, weight, originating_zoo, date_arrival)
+        super().__init__("bear", name, animal_id, birth_date, color, sex, weight, originating_zoo, date_arrival)
     
     def make_sound(self):
-        return self.hyena_sound
+        return self.bear_sound
 
-    # the lion object will call this method to get an unused hyena name. pop() will remove the first element from
-    #   the list_of_hyena_names[]
-    def get_hyena_name(self):
-        return self.list_of_hyena_names.pop(0)
+    # the lion object will call this method to get an unused bear name. pop() will remove the first element from
+    #   the list_of_bear_names[]
+    def get_bear_name(self):
+        return self.list_of_bear_names.pop(0)
 
     def gen_unique_id(self):
-        # Assuming the unique ID is composed of the species abbrevation and the number of hyenas
-        self.animal_id = "Hy" + str(Hyena.numOfHyenas).zfill(2)
+        # Assuming the unique ID is composed of the species abbrevation and the number of bears
+        self.animal_id = "Be" + str(Bear.numOfBears).zfill(2)
