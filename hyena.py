@@ -3,7 +3,7 @@ from Animal import Animal
 
 class Hyena(Animal):
     # create a static class variable to keep track of the number of Hyenas created
-    numOfTigers = 0
+    numOfHyenas = 0
 
     # Create the Hyena sound
     hyena_sound = " roar...roar "
@@ -19,7 +19,7 @@ class Hyena(Animal):
         line_num = 1
         for line in lines:
             if line_num == 3: # Hyenas names are on the 7th line
-                list_of_lion_names.extend(line.strip().split(', '))
+                list_of_hyena_names.extend(line.strip().split(', '))
                 break
             else:
                 line_num += 1
