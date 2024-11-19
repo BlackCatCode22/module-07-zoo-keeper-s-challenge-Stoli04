@@ -5,8 +5,8 @@ class Bear(Animal):
     # create a static class variable to keep track of the number of Bears created
     numOfBears = 0
 
-    # Create the Hyena sound
-    hyena_sound = " roar...roar "
+    # Create the Bear sound
+    bear_sound = " growl...growl "
 
     # Create a list of hyena names.
     list_of_hyena_names = []
