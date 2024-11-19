@@ -1,4 +1,4 @@
-#Import the Animal class from the Animal module
+# Import the Animal class from the Animal module
 from Animal import Animal
 
 class Tiger(Animal):
@@ -24,7 +24,7 @@ class Tiger(Animal):
             else:
                 line_num += 1
 
-    def init(self, name="a_name", animal_id="an_id", birth_date="2099-01-01", color="a_color", sex="a_sex", weight="a_weight", originating_zoo="a_zoo", date_arrival="2099-01-01"):
+    def __init__(self, name="a_name", animal_id="an_id", birth_date="2099-01-01", color="a_color", sex="a_sex", weight="a_weight", originating_zoo="a_zoo", date_arrival="2099-01-01"):
         # Increment the static variable numOfTigers when a new Tiger object is created
         Tiger.numOfTigers += 1
 
@@ -32,8 +32,8 @@ class Tiger(Animal):
         self.gen_unique_id()
 
         # Call the constructor of the parent class (Animal) with 'Tiger' as the species
-        super().init("tiger", name, animal_id, birth_date, color, sex, weight, originating_zoo, date_arrival)
-
+        super().__init__("tiger", name, animal_id, birth_date, color, sex, weight, originating_zoo, date_arrival)
+    
     def make_sound(self):
         return self.tiger_sound
 
