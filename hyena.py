@@ -6,7 +6,7 @@ class Hyena(Animal):
     numOfHyenas = 0
 
     # Create the Hyena sound
-    hyena_sound = " roar...roar "
+    hyena_sound = " hehehe...hehehe "
 
     # Create a list of hyena names.
     list_of_hyena_names = []
